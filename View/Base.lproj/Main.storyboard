@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sRs-Wz-osI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hoteles de Ensueño-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hotelesWithIos9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="16s-Vb-oHr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="kOu-FT-2OL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OtI-4L-3bJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="16s-Vb-oHr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JN6-H2-wqX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="16s-Vb-oHr" secondAttribute="trailing" id="U8G-IJ-fqv"/>
+                            <constraint firstItem="16s-Vb-oHr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jg5-UE-Blw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="16s-Vb-oHr" secondAttribute="bottom" id="xUi-45-FOf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hoteles de Ensueño" id="5rK-2Y-ZVK"/>
+                    <connections>
+                        <outlet property="myTable" destination="16s-Vb-oHr" id="rlg-tj-421"/>
+                        <segue destination="qw8-8t-U52" kind="show" identifier="mySegue" id="7Go-TA-VU2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--DetailVC View Controller-->
+        <scene sceneID="P8u-GH-ecf">
+            <objects>
+                <viewController id="qw8-8t-U52" customClass="DetailVCViewController" customModule="hotelesWithIos9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gFw-Av-SdV" customClass="detail">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jh4-1d-DrR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="B4w-6I-z7X"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="agg-bL-V7G">
+                                    <size key="itemSize" width="376" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="collectionCell" id="Ypj-FO-eeV" customClass="CollectionCellCollectionViewCell" customModule="hotelesWithIos9" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-cc-4md">
+                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="200"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="MIH-cc-4md" secondAttribute="trailing" id="6bp-pQ-qi1"/>
+                                            <constraint firstItem="MIH-cc-4md" firstAttribute="leading" secondItem="Ypj-FO-eeV" secondAttribute="leading" id="ei9-PW-DvG"/>
+                                            <constraint firstAttribute="bottom" secondItem="MIH-cc-4md" secondAttribute="bottom" id="gbN-Ac-0c2"/>
+                                            <constraint firstItem="MIH-cc-4md" firstAttribute="top" secondItem="Ypj-FO-eeV" secondAttribute="top" id="pgI-FM-Kvd"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellImage" destination="MIH-cc-4md" id="OuP-fg-5rd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="qw8-8t-U52" id="QKn-EJ-Y5X"/>
+                                    <outlet property="delegate" destination="qw8-8t-U52" id="ee5-VN-WMk"/>
+                                </connections>
+                            </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-JI-EwB">
+                                <rect key="frame" x="0.0" y="310" width="375" height="317"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6h-dr-aam">
+                                <rect key="frame" x="8" y="627" width="359" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cGQ-U8-ePV"/>
+                                </constraints>
+                                <state key="normal" title="Reservar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reservar:" destination="qw8-8t-U52" eventType="touchUpInside" id="dcw-3y-z7A"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Reservado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vp6-IB-NU4">
+                                <rect key="frame" x="8" y="272" width="359" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bH0-Hh-FtV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d3j-JI-EwB" firstAttribute="leading" secondItem="qmh-wX-dVo" secondAttribute="leading" id="29e-PM-CEB"/>
+                            <constraint firstItem="Jh4-1d-DrR" firstAttribute="trailing" secondItem="qmh-wX-dVo" secondAttribute="trailing" id="841-Kg-RqC"/>
+                            <constraint firstItem="Jh4-1d-DrR" firstAttribute="top" secondItem="qmh-wX-dVo" secondAttribute="top" id="ERT-hI-mVz"/>
+                            <constraint firstItem="d3j-JI-EwB" firstAttribute="top" secondItem="Vp6-IB-NU4" secondAttribute="bottom" constant="8" id="YMu-ef-Wds"/>
+                            <constraint firstItem="Jh4-1d-DrR" firstAttribute="leading" secondItem="qmh-wX-dVo" secondAttribute="leading" id="eFZ-U3-lYn"/>
+                            <constraint firstItem="qmh-wX-dVo" firstAttribute="trailing" secondItem="N6h-dr-aam" secondAttribute="trailing" constant="8" id="eQs-NM-8e1"/>
+                            <constraint firstItem="Vp6-IB-NU4" firstAttribute="leading" secondItem="qmh-wX-dVo" secondAttribute="leading" constant="8" id="kR1-bZ-GT3"/>
+                            <constraint firstItem="N6h-dr-aam" firstAttribute="leading" secondItem="qmh-wX-dVo" secondAttribute="leading" constant="8" id="pYI-HS-cB6"/>
+                            <constraint firstItem="Vp6-IB-NU4" firstAttribute="top" secondItem="Jh4-1d-DrR" secondAttribute="bottom" constant="8" id="pwK-zI-lEh"/>
+                            <constraint firstItem="qmh-wX-dVo" firstAttribute="trailing" secondItem="Vp6-IB-NU4" secondAttribute="trailing" constant="8" id="tJX-NE-q9y"/>
+                            <constraint firstItem="N6h-dr-aam" firstAttribute="bottom" secondItem="qmh-wX-dVo" secondAttribute="bottom" id="tQh-aY-XTd"/>
+                            <constraint firstItem="qmh-wX-dVo" firstAttribute="trailing" secondItem="d3j-JI-EwB" secondAttribute="trailing" id="wpc-Oj-4dx"/>
+                            <constraint firstItem="N6h-dr-aam" firstAttribute="top" secondItem="d3j-JI-EwB" secondAttribute="bottom" id="yrG-lu-OTz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qmh-wX-dVo"/>
+                    </view>
+                    <connections>
+                        <outlet property="hotelDescription" destination="d3j-JI-EwB" id="j6K-Cm-ARp"/>
+                        <outlet property="label" destination="Vp6-IB-NU4" id="YBk-uT-zmO"/>
+                        <outlet property="myCollection" destination="Jh4-1d-DrR" id="mia-YT-KST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cT-pd-Fl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1885.5999999999999" y="285.60719640179911"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cfe-jK-G4G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sRs-Wz-osI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cXX-JV-qil">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hnm-EA-kHY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyk-S5-P0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="196" y="-564.46776611694156"/>
+        </scene>
+    </scenes>
+</document>
